@@ -20,14 +20,14 @@ spec:
           value: "postgres"
         - name: "POSTGRES_PASSWORD"
           value: "Aw3s0m3"
-        - name: "POSTGRES_DATABASE"
+        - name: "POSTGRES_DB"
           value: "workshop"
         ports:
         - containerPort: 5432
         volumeMounts:
-        - mountPath: /tmp/data
-          name: postgres-data
+        - name: postgres-config
+          mountPath: /etc/config
       volumes:
-      - name: postgres-data
-        hostPath:
-         path: /root/data
+      - name: postgres-config
+        configMap:
+         name: postgres-data
