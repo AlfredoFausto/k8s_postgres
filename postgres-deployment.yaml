@@ -26,10 +26,7 @@ spec:
         - containerPort: 5432
         volumeMounts:
         - name: postgres-config
-          mountPath: /etc/config/initdb.sh
-          subPath: initdb.sql
-        - name: postgres-config
-          mountPath: /etc/config/createTable.sql
+          mountPath: /docker-entrypoint-initdb.d/createTable.sql
           subPath: createTable.sql
       volumes:
       - name: postgres-config
