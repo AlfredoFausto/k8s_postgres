@@ -7,7 +7,7 @@ resource "kubernetes_config_map" "default" {
   }
 
   data = {
-    "createTable.sql" = "${file("/Users/ajfausto/k8s/createTable.sql")}"
+    "createTable.sql" = "${file("/Path/to/file/createTable.sql")}"
   }
 }
 
